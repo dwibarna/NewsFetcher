@@ -7,8 +7,12 @@
 
 import Foundation
 
-struct Article: Identifiable {
-    let id = UUID()
+struct Article: Identifiable, Codable {
+    let id: Int
     let title: String
-    let description: String
+    let body: String
+    
+    var description: String {
+        body
+    }
 }
